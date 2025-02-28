@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.settings.SettingsFragment"
+    android:paddingTop="?attr/actionBarSize">
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="@string/searchHint"
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        <RadioButton android:id="@+id/FahrenheitButton"
+            android:text="@string/fahrenheitButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="80px"/>
+        <RadioButton android:id="@+id/CelciusButton"
+            android:text="@string/celciusButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="80px"/>
+    </RadioGroup>
+    
+</LinearLayout>
