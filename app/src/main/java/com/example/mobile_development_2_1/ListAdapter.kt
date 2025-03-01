@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 const val VIEW_TYPE_HOT = 0;
 const val VIEW_TYPE_COLD = 1;
 
-class DayListAdapter() : ListAdapter<DayPrognosis, ViewHolder>(DayDiffCallback()) {
+class DayListAdapter(private val weather: DataResponce) : ListAdapter<DayPrognosis, ViewHolder>(DayDiffCallback()) {
 
     inner class DayViewHolderHot(view: View) : RecyclerView.ViewHolder(view) {
         val datetime: TextView = view.findViewById<TextView>(R.id.datetime);
@@ -22,7 +22,7 @@ class DayListAdapter() : ListAdapter<DayPrognosis, ViewHolder>(DayDiffCallback()
         val icon: ImageView = view.findViewById<ImageView>(R.id.icon)
 
         fun bind(position: Int) {
-            val hotDay: DayPrognosis = currentList[position]
+            val hotDay: DayPrognosis = weather.list[position]
             datetime.setText(hotDay.dt_txt)
             plusTxt.setText(hotDay.temp.toInt());
             val address = "https://openweathermap.org/img/wn/${hotDay.weather[0].icon}@2x.png"

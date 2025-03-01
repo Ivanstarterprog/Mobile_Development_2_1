@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         })
         homeViewModel.items.observe(viewLifecycleOwner){
 
-            adapter = DayListAdapter()
+            adapter = homeViewModel.items.value?.let { it1 -> DayListAdapter(it1) }!!
             binding.rView.adapter = adapter
         }
         homeViewModel.errorMessage.observe(viewLifecycleOwner){
